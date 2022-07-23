@@ -2,7 +2,14 @@ package Colegio;
 
 import Pelicula.Pelicula;
 
+import javax.persistence.*;
+
+//@Entity
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Votante {
+  //  @Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    int id_votante;
     String nombre;
     String id;
     String dni;

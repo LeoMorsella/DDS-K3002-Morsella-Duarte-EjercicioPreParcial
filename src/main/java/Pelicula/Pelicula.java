@@ -1,5 +1,7 @@
 package Pelicula;
 
+
+// Dado que tenemos PeliculaResponse no se si es necesaria esta clase
 public class Pelicula {
     String nombre;
     String id;
