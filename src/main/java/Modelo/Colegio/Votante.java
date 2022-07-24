@@ -1,8 +1,4 @@
-package Colegio;
-
-import Pelicula.Pelicula;
-
-import javax.persistence.*;
+package Modelo.Colegio;
 
 //@Entity
 //@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -13,7 +9,7 @@ public abstract class Votante {
     String nombre;
     String id;
     String dni;
-    Pelicula peliculaVotada;
+    Votacion peliculaVotada;
 
     public String getNombre() {
         return nombre;
@@ -27,7 +23,7 @@ public abstract class Votante {
         return dni;
     }
 
-    public Pelicula getPeliculaVotada() {
+    public Votacion getPeliculaVotada() {
         return peliculaVotada;
     }
 
@@ -43,7 +39,7 @@ public abstract class Votante {
         this.dni = dni;
     }
 
-    public void setPeliculaVotada(Pelicula peliculaVotada) {
+    public void setPeliculaVotada(Votacion peliculaVotada) {
         this.peliculaVotada = peliculaVotada;
     }
 }

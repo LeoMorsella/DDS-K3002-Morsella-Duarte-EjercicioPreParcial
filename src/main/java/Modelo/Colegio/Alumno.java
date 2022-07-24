@@ -1,9 +1,7 @@
-package Colegio;
-
-import javax.persistence.Entity;
+package Modelo.Colegio;
 
 //@Entity
-public class Alumno extends Votante{
+public class Alumno extends Votante {
     int grado;
 
     public int getGrado() {

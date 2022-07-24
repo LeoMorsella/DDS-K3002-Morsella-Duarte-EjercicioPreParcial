@@ -1,6 +1,4 @@
-package Colegio;
-
-import javax.persistence.Entity;
+package Modelo.Colegio;
 
 //@Entity
 public class Graduados extends Votante{

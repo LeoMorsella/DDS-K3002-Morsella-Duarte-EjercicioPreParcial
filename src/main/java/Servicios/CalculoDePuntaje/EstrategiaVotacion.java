@@ -1,4 +1,4 @@
-package Votaciones;
+package Servicios.CalculoDePuntaje;
 
 public class EstrategiaVotacion {
 }

@@ -1,6 +1,6 @@
-package Colegio;
+package Modelo.Colegio;
 
-import Pelicula.Pelicula;
+import Modelo.Pelicula.Pelicula;
 
 import java.util.ArrayList;
 

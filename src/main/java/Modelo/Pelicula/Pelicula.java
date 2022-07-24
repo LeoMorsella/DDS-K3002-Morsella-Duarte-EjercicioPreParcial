@@ -1,26 +1,24 @@
-package Pelicula;
+package Modelo.Pelicula;
 
 
 // Dado que tenemos PeliculaResponse no se si es necesaria esta clase
 public class Pelicula {
     String nombre;
-    String id;
+    String año;
 
     public String getNombre() {
         return nombre;
     }
 
-    public String getId() {
-        return id;
+    public String getAño() {
+        return año;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setAño(String año) {
+        this.año = año;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    //TODO CalcularPuntaje()
 }

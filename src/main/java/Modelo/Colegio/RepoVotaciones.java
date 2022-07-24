@@ -1,4 +1,6 @@
-package Votaciones;
+package Modelo.Colegio;
+
+import Modelo.Colegio.Votacion;
 
 import java.util.ArrayList;
 
@@ -6,4 +8,8 @@ import java.util.ArrayList;
 public class RepoVotaciones {
 
     ArrayList<Votacion> votaciones;
+
+    public ArrayList<Votacion> getVotaciones() {
+        return votaciones;
+    }
 }
