@@ -1,26 +1,17 @@
 package Modelo.Colegio;
 
-import Modelo.Pelicula.Pelicula;
+import Modelo.Pelicula.PeliculaRequest;
 
 import java.util.ArrayList;
 
 public class Colegio {
-    ArrayList<Pelicula> peliculas;
-    ArrayList<Alumno> alumnos;
+    ArrayList<Votante> votantes;
 
-    public ArrayList<Alumno> getAlumnos() {
-        return alumnos;
+    public void setVotantes(ArrayList<Votante> votantes) {
+        this.votantes = votantes;
     }
 
-    public ArrayList<Pelicula> getPeliculas() {
-        return peliculas;
-    }
-
-    public void setAlumnos(ArrayList<Alumno> alumnos) {
-        this.alumnos = alumnos;
-    }
-
-    public void setPeliculas(ArrayList<Pelicula> peliculas) {
-        this.peliculas = peliculas;
+    public ArrayList<Votante> getVotantes() {
+        return votantes;
     }
 }

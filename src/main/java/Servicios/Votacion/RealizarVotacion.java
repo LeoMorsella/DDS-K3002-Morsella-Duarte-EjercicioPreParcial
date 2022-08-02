@@ -3,15 +3,13 @@ package Servicios.Votacion;
 import Modelo.Colegio.RepoVotaciones;
 import Modelo.Colegio.Votacion;
 import Modelo.Colegio.Votante;
-import Modelo.Pelicula.Pelicula;
+import Modelo.Pelicula.PeliculaRequest;
 import Servicios.Pelicula.APIPelicula.PeliculaResponse;
 import Servicios.Pelicula.ValidarPelicula;
 
-import javax.xml.validation.Validator;
-
 public class RealizarVotacion {
 
-    public void realizarVotacion(Pelicula pelicula, Votante votante)throws Exception{
+    public void votarPelicula(PeliculaRequest pelicula, Votante votante)throws Exception{
         PeliculaResponse peliculaVotada = ValidarPelicula.validarPelicula(pelicula);
         if(peliculaVotada!=null){
             Votacion nuevaVotacion = new Votacion(peliculaVotada, votante);

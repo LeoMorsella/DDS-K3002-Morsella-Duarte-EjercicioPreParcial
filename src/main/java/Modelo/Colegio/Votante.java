@@ -2,6 +2,7 @@ package Modelo.Colegio;
 
 import javax.persistence.*;
 
+// Actualizar para prototype
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Votante {

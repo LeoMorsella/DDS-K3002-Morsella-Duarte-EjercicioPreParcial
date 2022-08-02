@@ -1,6 +1,6 @@
 package Modelo.Pelicula;
 
-public class Pelicula {
+public class PeliculaRequest {
 
     int id;
     String nombre;
