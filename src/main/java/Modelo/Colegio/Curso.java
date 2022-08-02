@@ -13,4 +13,8 @@ public class Curso {
     public void setVotantes(ArrayList<Votante> votantes) {
         this.votantes = votantes;
     }
+
+    public void calcularPuntaje() {
+        //TODO
+    }
 }

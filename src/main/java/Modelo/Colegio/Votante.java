@@ -46,4 +46,14 @@ public abstract class Votante {
     public void setPeliculaVotada(Votacion peliculaVotada) {
         this.peliculaVotada = peliculaVotada;
     }
+
+    public Votante(String nombre, String id, String dni, Votacion peliculaVotada) {
+        this.nombre = nombre;
+        this.id = id;
+        this.dni = dni;
+        this.peliculaVotada = peliculaVotada;
+    }
+
+    abstract public Votante clone();
+
 }
