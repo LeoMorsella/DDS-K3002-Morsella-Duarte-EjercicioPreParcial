@@ -1,14 +1,17 @@
 package Modelo.Colegio;
 
-//@Entity
-//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+import javax.persistence.*;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Votante {
-  //  @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Id
+  @GeneratedValue
     int id_votante;
     String nombre;
     String id;
     String dni;
+    @Transient
     Votacion peliculaVotada;
 
     public String getNombre() {

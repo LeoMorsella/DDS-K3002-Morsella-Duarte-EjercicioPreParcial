@@ -1,15 +1,20 @@
 package Servicios.Pelicula.APIPelicula;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.ArrayList;
 
-//@Entity
+@Entity
 public class PeliculaResponse {
+    @Id @GeneratedValue
+    int id;
     String nombrePelicula;
     int anio;
     String clasificacion;
-   // @ElementCollection
+
     ArrayList<String> paisesOrigen;
-   // @ElementCollection
     ArrayList<String> idiomas;
 
     public String getNombrePelicula() {

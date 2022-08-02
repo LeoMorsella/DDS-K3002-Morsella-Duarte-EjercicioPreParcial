@@ -1,8 +1,8 @@
 package Modelo.Pelicula;
 
-
-// Dado que tenemos PeliculaResponse no se si es necesaria esta clase
 public class Pelicula {
+
+    int id;
     String nombre;
     String año;
 

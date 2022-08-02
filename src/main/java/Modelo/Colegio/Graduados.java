@@ -1,5 +1,7 @@
 package Modelo.Colegio;
 
-//@Entity
+import javax.persistence.Entity;
+
+@Entity
 public class Graduados extends Votante{
 }
