@@ -8,8 +8,18 @@ import java.util.ArrayList;
 public class RepoVotaciones {
 
     ArrayList<Votacion> votaciones;
+    static RepoVotaciones instance = null;
+
+    public static RepoVotaciones getRepo(){
+        if(instance == null) return new RepoVotaciones();
+        else return instance;
+    }
+
 
     public ArrayList<Votacion> getVotaciones() {
         return votaciones;
+    }
+    public void setVotaciones(ArrayList<Votacion> votaciones) {
+        this.votaciones = votaciones;
     }
 }

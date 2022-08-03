@@ -1,4 +1,8 @@
 package Servicios.CalculoDePuntaje;
 
-public class EstrategiaVotacion {
+import Modelo.Colegio.Votante;
+
+abstract public class EstrategiaVotacion {
+
+    abstract public double puntuarVotante(Votante votante);
 }

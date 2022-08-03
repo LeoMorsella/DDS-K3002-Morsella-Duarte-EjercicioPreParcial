@@ -6,54 +6,45 @@ import javax.persistence.*;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Votante {
-  @Id
-  @GeneratedValue
-    int id_votante;
     String nombre;
+
+    @Id
+    @GeneratedValue
     String id;
-    String dni;
     @Transient
     Votacion peliculaVotada;
 
+    Double promedio;
+
+    public Votante(String nombre, Votacion peliculaVotada, Double promedio) {
+        this.nombre = nombre;
+        this.peliculaVotada = peliculaVotada;
+        this.promedio = promedio;
+    }
+
+    abstract public Votante clone();
+
     public String getNombre() {
         return nombre;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public Votacion getPeliculaVotada() {
-        return peliculaVotada;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
+    public Votacion getPeliculaVotada() {
+        return peliculaVotada;
     }
 
     public void setPeliculaVotada(Votacion peliculaVotada) {
         this.peliculaVotada = peliculaVotada;
     }
 
-    public Votante(String nombre, String id, String dni, Votacion peliculaVotada) {
-        this.nombre = nombre;
-        this.id = id;
-        this.dni = dni;
-        this.peliculaVotada = peliculaVotada;
+    public Double getPromedio() {
+        return promedio;
     }
 
-    abstract public Votante clone();
-
+    public void setPromedio(Double promedio) {
+        this.promedio = promedio;
+    }
 }

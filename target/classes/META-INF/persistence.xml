@@ -12,7 +12,7 @@
         <class>Servicios.Pelicula.APIPelicula.PeliculaResponse</class>
         <class>Modelo.Colegio.Votante</class>
         <class>Modelo.Colegio.Alumno</class>
-        <class>Modelo.Colegio.Graduados</class>
+        <class>Modelo.Colegio.Graduado</class>
 
 
         <properties>

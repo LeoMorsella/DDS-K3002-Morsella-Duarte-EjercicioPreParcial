@@ -1,10 +1,20 @@
 package Modelo.Colegio;
 
+import Servicios.Pelicula.APIPelicula.PeliculaResponse;
+
 import java.util.ArrayList;
 
-public class Curso {
+public class Curso extends Votante{
 
     ArrayList<Votante> votantes;
+
+    String nombre;
+    Votacion peliculaVotada;
+    Double promedio;
+    public Curso(String nombre, Votacion peliculaVotada, Double promedio, ArrayList<Votante> votantes) {
+        super(nombre, peliculaVotada, promedio);
+        this.votantes = votantes;
+    }
 
     public ArrayList<Votante> getVotantes() {
         return votantes;
@@ -14,7 +24,8 @@ public class Curso {
         this.votantes = votantes;
     }
 
-    public void calcularPuntaje() {
-        //TODO
+    @Override
+    public Votante clone() {
+        return null;
     }
 }
