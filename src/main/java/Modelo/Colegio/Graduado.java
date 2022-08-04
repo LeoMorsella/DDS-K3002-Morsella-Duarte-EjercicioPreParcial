@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 
 @Entity
 public class Graduado extends Votante{
+
+    public Graduado() {}
     public Graduado(String nombre, Votacion peliculaVotada, Double promedio, boolean pagaAportes) {
 
         super(nombre, peliculaVotada, promedio);
@@ -50,7 +52,4 @@ public class Graduado extends Votante{
         this.peliculaVotada = peliculaVotada;
     }
 
-    public Votante clone() {
-        return new Graduado(nombre, peliculaVotada, promedio, pagaAportes);
-    }
 }

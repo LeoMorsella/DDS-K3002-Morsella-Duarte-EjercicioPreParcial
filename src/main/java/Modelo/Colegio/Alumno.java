@@ -22,12 +22,12 @@ public class Alumno extends Votante {
         this.grado = grado;
     }
 
+    public Alumno() {
+
+    }
     public Alumno(String nombre, Votacion peliculaVotada, Double promedio, int grado) {
         super(nombre , peliculaVotada, promedio);
         this.grado = grado;
     }
 
-    public Votante clone() {
-        return new Alumno(nombre, peliculaVotada, promedio, grado);
-    }
 }
