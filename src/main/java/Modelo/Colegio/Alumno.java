@@ -9,11 +9,6 @@ import javax.persistence.Transient;
 public class Alumno extends Votante {
     int grado;
 
-    String nombre;
-    String id;
-    Votacion peliculaVotada;
-    Double promedio;
-
     public int getGrado() {
         return grado;
     }

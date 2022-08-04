@@ -3,10 +3,11 @@ package Modelo.Colegio;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 
 @Entity
 public class Graduado extends Votante{
-
+    boolean pagaAportes;
     public Graduado() {}
     public Graduado(String nombre, Votacion peliculaVotada, Double promedio, boolean pagaAportes) {
 
@@ -14,11 +15,8 @@ public class Graduado extends Votante{
         this.pagaAportes = pagaAportes;
     }
 
-    String nombre;
-    String id;
-    Double promedio;
-    boolean pagaAportes;
-    Votacion peliculaVotada;
+
+
 
     public String getNombre() {
         return nombre;
