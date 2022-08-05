@@ -10,9 +10,9 @@ import java.util.List;
 
 public class PuntajePeliculaService {
 
-    static public double puntuarPelicula(PeliculaResponse pelicula) throws IOException {
+   /* static public double puntuarPelicula(PeliculaResponse pelicula) throws IOException {
         return puntuarOrigen(pelicula.getPaisesOrigen()) + puntuarIdioma(pelicula.getIdiomas());
-    }
+    }*/
 
     static private double puntuarOrigen(List<String> origen) throws IOException {
         List<String> paisesLatinos= getPaisesLatinos();

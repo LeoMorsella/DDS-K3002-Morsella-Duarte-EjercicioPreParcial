@@ -27,7 +27,7 @@ public class ValidarPelicula {
 
     // Debe indicar que si para mayor de edad, debe lanzar un mensaje de error
     static private Boolean clasificacionValida(PeliculaResponse nuevaPelicula){
-        String clasificacion = nuevaPelicula.getClasificacion();
+        String clasificacion = nuevaPelicula.getRated();
 
         if(clasificacion == "R" || clasificacion == "NC-17") {
             System.out.println("La pelicula ingresada no es apta para menores de 17 años");

@@ -10,31 +10,50 @@ import java.util.ArrayList;
 public class PeliculaResponse {
     @Id @GeneratedValue
     int id;
-    String nombrePelicula;
-    int anio;
-    String clasificacion;
 
-    ArrayList<String> paisesOrigen;
-    ArrayList<String> idiomas;
+   String title;
+   String year;
+   String rated;
+   String language;
+   String country;
 
-    public String getNombrePelicula() {
-        return nombrePelicula;
+    public String getTitle() {
+        return title;
     }
 
-    public int getAnio() {
-        return anio;
+    public String getYear() {
+        return year;
     }
 
-    public String getClasificacion() {
-        return clasificacion;
+    public String getRated() {
+        return rated;
     }
 
-    public ArrayList<String> getPaisesOrigen() {
-        return paisesOrigen;
+    public String getLanguage() {
+        return language;
     }
 
-    public ArrayList<String> getIdiomas() {
-        return idiomas;
+    public String getCountry() {
+        return country;
     }
 
+    public void setTitle(String title) {
+        title = title;
+    }
+
+    public void setYear(String year) {
+        year = year;
+    }
+
+    public void setRated(String rated) {
+        rated = rated;
+    }
+
+    public void setLanguage(String language) {
+        language = language;
+    }
+
+    public void setCountry(String country) {
+        country = country;
+    }
 }
