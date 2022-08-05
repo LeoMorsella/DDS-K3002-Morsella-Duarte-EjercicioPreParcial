@@ -10,7 +10,7 @@ public class ValidarPelicula {
     static public PeliculaResponse validarPelicula(PeliculaRequest pelicula) throws Exception {
       try{
        PeliculaResponse nuevaPelicula =
-               new APIPeliculaService().buscarPelicula(pelicula.getNombre(), pelicula.getAño());
+               new APIPeliculaService().buscarPelicula(pelicula.getNombre(), pelicula.getanio());
        if (clasificacionValida(nuevaPelicula)) return nuevaPelicula;
        peliculaNoValida();
       }

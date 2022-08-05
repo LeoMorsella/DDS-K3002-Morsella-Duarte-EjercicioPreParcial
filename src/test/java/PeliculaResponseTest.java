@@ -1,3 +1,5 @@
+import Modelo.Colegio.*;
+import Modelo.Pelicula.PeliculaRequest;
 import Servicios.Pelicula.APIPelicula.APIPeliculaService;
 import Servicios.Pelicula.APIPelicula.PeliculaResponse;
 import Servicios.Pelicula.ValidarPelicula;
@@ -15,5 +17,16 @@ public class PeliculaResponseTest {
         Assertions.assertDoesNotThrow(()->peliculaService.buscarPelicula("The Batman","2022"));
     }
 
+    @Test
+    public void testRealizarVotacion() throws Exception{
+        PeliculaRequest pelicula = new PeliculaRequest("The Batman","2022");
+        PeliculaResponse peliculaR = ValidarPelicula.validarPelicula(pelicula);
+
+
+
+
+
+
+    }
 
 }

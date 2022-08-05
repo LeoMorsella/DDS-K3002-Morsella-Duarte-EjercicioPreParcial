@@ -21,7 +21,7 @@ public class Alumno extends Votante {
 
     }
     public Alumno(String nombre, Votacion peliculaVotada, Double promedio, int grado) {
-        super(nombre , peliculaVotada, promedio);
+        super(nombre,peliculaVotada, promedio);
         this.grado = grado;
     }
 
