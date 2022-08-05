@@ -1,5 +1,7 @@
 package Servicios.Pelicula.APIPelicula;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,49 +13,54 @@ public class PeliculaResponse {
     @Id @GeneratedValue
     int id;
 
-   String title;
-   String year;
-   String rated;
-   String language;
-   String country;
+   @JsonProperty("Title")
+   String Title = "";
+   @JsonProperty("Year")
+   String Year = "";
+   @JsonProperty("Rated")
+   String Rated = "";
+   @JsonProperty("Language")
+   String Language = "";
+   @JsonProperty("Country")
+   String Country = "";
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public String getYear() {
-        return year;
+        return Year;
     }
 
     public String getRated() {
-        return rated;
+        return Rated;
     }
 
     public String getLanguage() {
-        return language;
+        return Language;
     }
 
     public String getCountry() {
-        return country;
+        return Country;
     }
 
     public void setTitle(String title) {
-        title = title;
+        Title = title;
     }
 
     public void setYear(String year) {
-        year = year;
+        Year = year;
     }
 
     public void setRated(String rated) {
-        rated = rated;
+        Rated = rated;
     }
 
     public void setLanguage(String language) {
-        language = language;
+        Language = language;
     }
 
     public void setCountry(String country) {
-        country = country;
+        Country = country;
     }
 }
