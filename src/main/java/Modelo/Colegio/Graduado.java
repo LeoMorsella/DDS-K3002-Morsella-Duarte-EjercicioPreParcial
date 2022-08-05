@@ -1,22 +1,12 @@
 package Modelo.Colegio;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import javax.persistence.Entity;
-import javax.persistence.Transient;
+import java.util.List;
 
 @Entity
 public class Graduado extends Votante{
     boolean pagaAportes;
-    public Graduado() {}
-    public Graduado(String nombre, Votacion peliculaVotada, Double promedio, boolean pagaAportes) {
-
-        super(nombre, peliculaVotada, promedio);
-        this.pagaAportes = pagaAportes;
-    }
-
-
-
+    public Graduado Graduado() { return new Graduado();}
 
     public String getNombre() {
         return nombre;
@@ -48,6 +38,12 @@ public class Graduado extends Votante{
 
     public void setPeliculaVotada(Votacion peliculaVotada) {
         this.peliculaVotada = peliculaVotada;
+    }
+
+    public void cargarParametros(List<Object> parametros){
+        this.nombre = (String) parametros.get(0);
+        this.promedio = (Double) parametros.get(1);
+        this.pagaAportes = (boolean) parametros.get(2);
     }
 
 }

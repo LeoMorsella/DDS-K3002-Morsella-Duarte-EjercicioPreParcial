@@ -14,4 +14,6 @@ public class Colegio {
     public ArrayList<Votante> getVotantes() {
         return votantes;
     }
+
+    public void addVotante (Votante votante) {this.votantes.add(votante);}
 }

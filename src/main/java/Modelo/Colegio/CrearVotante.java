@@ -1,9 +1,24 @@
 package Modelo.Colegio;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
-public abstract class CrearVotante {
+public class CrearVotante {
 
-    abstract public Votante crearVotante(String nombre, String id, Double promedio, boolean pagaAportes, Votacion peliculaVotada, int grado, ArrayList<Alumno> alumnos);
+    public FactoryVotante crearFactory(String tipo){
+        FactoryVotante factory = null;
+        if(Objects.equals(tipo, "alumno")) factory = new FactoryAlumno();
+        else if(Objects.equals(tipo, "graduado")) factory = new FactoryGraduado();
+        else if(Objects.equals(tipo, "curso")) factory = new FactoryCurso();
+        return factory;
+    }
+
+    public Votante crearVotante(String tipo, List<Object> parametros, Colegio colegio){
+        FactoryVotante factory = crearFactory(tipo);
+        Votante newVotante = factory.crearVotante();
+        newVotante.cargarParametros(parametros);
+        colegio.addVotante(newVotante);
+        return newVotante;
+    }
 
 }

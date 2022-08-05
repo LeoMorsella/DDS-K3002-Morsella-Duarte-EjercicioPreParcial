@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class PuntajePeliculaService {
@@ -14,29 +15,24 @@ public class PuntajePeliculaService {
         return puntuarOrigen(pelicula.getCountry()) + puntuarIdioma(pelicula.getLanguage());
     }
 
-    /*static private double puntuarOrigen(List<String> origen) throws IOException {
-        List<String> paisesLatinos= getPaisesLatinos();
-
-        if(origen.stream().anyMatch( pais -> pais.equals("Argentina"))) return 20;
-        else if (origen.stream().anyMatch(paisesLatinos::contains)) return 10;
-        else return 0;
-    }*/
+    static private List<String> separarPorComas(String cadena){
+        return Arrays.asList(cadena.split("\\s*,\\s*"));
+    }
 
     static private double puntuarOrigen(String origen) throws IOException {
-        List<String> paisesLatinos = getPaisesLatinos();
-        if(origen == "Argentina") return 20;
-        else if(paisesLatinos.contains(origen)) return 10;
+        List<String> paisesLatinos= getPaisesLatinos();
+        List <String> origenLista = separarPorComas(origen);
+
+        if(origenLista.stream().anyMatch( pais -> pais.equals("Argentina"))) return 20;
+        else if (origenLista.stream().anyMatch(paisesLatinos::contains)) return 10;
         else return 0;
     }
-/*
-    static private double puntuarIdioma(List<String> idiomas){
-        if(idiomas.stream().anyMatch(idioma -> idioma == "Spanish")) return 20;
+
+    static private double puntuarIdioma(String idiomas){
+        List <String> idiomasLista = separarPorComas(idiomas);
+
+        if(idiomasLista.stream().anyMatch(idioma -> idioma == "Spanish")) return 20;
         return 0;
-    }
- */
-    static private double puntuarIdioma(String idiomas) {
-        if(idiomas == "Spanish") return 20;
-        else return 0;
     }
     static private List<String> getPaisesLatinos() throws IOException {
 

@@ -1,6 +1,7 @@
 package Modelo.Colegio;
 
 import javax.persistence.*;
+import java.util.List;
 
 // Actualizar para prototype
 @Entity
@@ -16,14 +17,6 @@ public abstract class Votante {
     Votacion peliculaVotada;
 
     Double promedio;
-
-    public Votante() {}
-    public Votante(String nombre, Votacion peliculaVotada, Double promedio) {
-        this.nombre = nombre;
-        this.peliculaVotada = peliculaVotada;
-        this.promedio = promedio;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -47,4 +40,7 @@ public abstract class Votante {
     public void setPromedio(Double promedio) {
         this.promedio = promedio;
     }
+
+    //Los parametros se toman desde un formulario de la web
+    abstract public void cargarParametros(List<Object> parametros);
 }

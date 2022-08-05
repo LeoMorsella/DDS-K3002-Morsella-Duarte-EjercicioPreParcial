@@ -1,28 +1,27 @@
 package Modelo.Colegio;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import java.util.List;
 
 @Entity
 public class Alumno extends Votante {
-    int grado;
+    Double grado;
 
-    public int getGrado() {
+    public Double getGrado() {
         return grado;
     }
 
-    public void setGrado(int grado) {
+    public void setGrado(Double grado) {
         this.grado = grado;
     }
 
-    public Alumno() {
+    public Alumno Alumno() {return new Alumno();}
 
-    }
-    public Alumno(String nombre, Votacion peliculaVotada, Double promedio, int grado) {
-        super(nombre,peliculaVotada, promedio);
-        this.grado = grado;
+    @Override
+    public void cargarParametros(List<Object> parametros){
+        this.nombre = (String) parametros.get(0);
+        this.promedio = (Double) parametros.get(1);
+        this.grado = (Double) parametros.get(2);
     }
 
 }
