@@ -11,18 +11,18 @@ public abstract class Votante {
     @Id
     @GeneratedValue
     String id;
+
     @Transient
     Votacion peliculaVotada;
 
     Double promedio;
 
+    public Votante() {}
     public Votante(String nombre, Votacion peliculaVotada, Double promedio) {
         this.nombre = nombre;
         this.peliculaVotada = peliculaVotada;
         this.promedio = promedio;
     }
-
-    abstract public Votante clone();
 
     public String getNombre() {
         return nombre;

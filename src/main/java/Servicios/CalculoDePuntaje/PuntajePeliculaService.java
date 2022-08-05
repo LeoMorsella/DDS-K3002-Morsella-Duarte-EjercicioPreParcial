@@ -11,20 +11,32 @@ import java.util.List;
 public class PuntajePeliculaService {
 
     static public double puntuarPelicula(PeliculaResponse pelicula) throws IOException {
-        return puntuarOrigen(pelicula.getPaisesOrigen()) + puntuarIdioma(pelicula.getIdiomas());
+        return puntuarOrigen(pelicula.getCountry()) + puntuarIdioma(pelicula.getLanguage());
     }
 
-    static private double puntuarOrigen(List<String> origen) throws IOException {
+    /*static private double puntuarOrigen(List<String> origen) throws IOException {
         List<String> paisesLatinos= getPaisesLatinos();
 
         if(origen.stream().anyMatch( pais -> pais.equals("Argentina"))) return 20;
         else if (origen.stream().anyMatch(paisesLatinos::contains)) return 10;
         else return 0;
-    }
+    }*/
 
+    static private double puntuarOrigen(String origen) throws IOException {
+        List<String> paisesLatinos = getPaisesLatinos();
+        if(origen == "Argentina") return 20;
+        else if(paisesLatinos.contains(origen)) return 10;
+        else return 0;
+    }
+/*
     static private double puntuarIdioma(List<String> idiomas){
         if(idiomas.stream().anyMatch(idioma -> idioma == "Spanish")) return 20;
         return 0;
+    }
+ */
+    static private double puntuarIdioma(String idiomas) {
+        if(idiomas == "Spanish") return 20;
+        else return 0;
     }
     static private List<String> getPaisesLatinos() throws IOException {
 
