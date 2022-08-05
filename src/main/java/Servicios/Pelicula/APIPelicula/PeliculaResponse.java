@@ -2,11 +2,10 @@ package Servicios.Pelicula.APIPelicula;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class PeliculaResponse {

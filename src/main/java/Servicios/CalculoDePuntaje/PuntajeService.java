@@ -5,8 +5,8 @@ import Modelo.Colegio.*;
 import java.io.IOException;
 
 public class PuntajeService {
-    //Return double
-    static void calcularPuntaje(Votacion votacion) throws IOException {
+
+    static double calcularPuntaje(Votacion votacion) throws IOException {
         PuntajeVotadorService puntajeVotadorService = new PuntajeVotadorService();
         Votante votante = votacion.getVotante();
         if(votante.getClass() == Alumno.class)
@@ -15,7 +15,7 @@ public class PuntajeService {
             puntajeVotadorService.setEstrategiaVotacion(new EstrategiaGraduado());
         if (votante.getClass() == Curso.class)
             puntajeVotadorService.setEstrategiaVotacion(new EstrategiaCurso());
-       /* return PuntajePeliculaService.puntuarPelicula(votacion.getPelicula())
-                + puntajeVotadorService.puntuarVotante(votante);*/
+        return PuntajePeliculaService.puntuarPelicula(votacion.getPelicula())
+                + puntajeVotadorService.puntuarVotante(votante);
     }
 }

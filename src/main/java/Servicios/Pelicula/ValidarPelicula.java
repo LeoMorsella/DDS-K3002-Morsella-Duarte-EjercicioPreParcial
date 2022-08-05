@@ -26,7 +26,7 @@ public class ValidarPelicula {
     }
 
     // Debe indicar que si para mayor de edad, debe lanzar un mensaje de error
-    static private Boolean clasificacionValida(PeliculaResponse nuevaPelicula){
+     static private Boolean clasificacionValida(PeliculaResponse nuevaPelicula){
         String clasificacion = nuevaPelicula.getRated();
 
         if(clasificacion == "R" || clasificacion == "NC-17") {
