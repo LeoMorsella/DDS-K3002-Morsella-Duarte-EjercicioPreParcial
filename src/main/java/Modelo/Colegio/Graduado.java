@@ -40,10 +40,15 @@ public class Graduado extends Votante{
         this.peliculaVotada = peliculaVotada;
     }
 
+    @Override
     public void cargarParametros(List<Object> parametros){
         this.nombre = (String) parametros.get(0);
         this.promedio = (Double) parametros.get(1);
         this.pagaAportes = (boolean) parametros.get(2);
+    }
+
+    public boolean esDestacado(){
+        return promedio > (Double) 8.0;
     }
 
 }

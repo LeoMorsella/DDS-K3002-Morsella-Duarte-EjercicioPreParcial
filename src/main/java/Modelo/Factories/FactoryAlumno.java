@@ -1,4 +1,7 @@
-package Modelo.Colegio;
+package Modelo.Factories;
+
+import Modelo.Colegio.Alumno;
+import Modelo.Colegio.Votante;
 
 public class FactoryAlumno extends FactoryVotante {
     @Override

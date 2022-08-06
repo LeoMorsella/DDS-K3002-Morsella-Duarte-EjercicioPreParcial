@@ -1,6 +1,7 @@
 package Servicios.CalculoDePuntaje;
 
 import Modelo.Colegio.Votante;
+import Servicios.CalculoDePuntaje.Strategies.EstrategiaVotacion;
 
 public class PuntajeVotadorService {
 

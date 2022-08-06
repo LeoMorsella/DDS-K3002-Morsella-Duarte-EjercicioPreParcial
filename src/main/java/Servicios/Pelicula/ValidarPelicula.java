@@ -21,15 +21,14 @@ public class ValidarPelicula {
     }
 
     static private Void peliculaNoValida(){
-        System.out.println("La pelicula ingresada no fue encontrada, intente de nuevo");
-        return null;
+        throw new RuntimeException("La pelicula ingresada no fue encontrada, intente de nuevo");
     }
 
     // Debe indicar que si para mayor de edad, debe lanzar un mensaje de error
      static private Boolean clasificacionValida(PeliculaResponse nuevaPelicula){
         String clasificacion = nuevaPelicula.getRated();
 
-        if(clasificacion == "R" || clasificacion == "NC-17") {
+        if(clasificacion.contains("R") || clasificacion.contains("NC-17")) {
             System.out.println("La pelicula ingresada no es apta para menores de 17 años");
             return false;
         }

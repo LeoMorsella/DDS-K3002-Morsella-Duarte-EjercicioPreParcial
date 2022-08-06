@@ -1,6 +1,9 @@
 package Servicios.CalculoDePuntaje;
 
 import Modelo.Colegio.*;
+import Servicios.CalculoDePuntaje.Strategies.EstrategiaAlumno;
+import Servicios.CalculoDePuntaje.Strategies.EstrategiaCurso;
+import Servicios.CalculoDePuntaje.Strategies.EstrategiaGraduado;
 
 import java.io.IOException;
 

@@ -1,4 +1,7 @@
-package Modelo.Colegio;
+package Modelo.Factories;
+
+import Modelo.Colegio.Graduado;
+import Modelo.Colegio.Votante;
 
 public class FactoryGraduado extends FactoryVotante {
 

@@ -43,4 +43,6 @@ public abstract class Votante {
 
     //Los parametros se toman desde un formulario de la web
     abstract public void cargarParametros(List<Object> parametros);
+
+    abstract public boolean esDestacado();
 }

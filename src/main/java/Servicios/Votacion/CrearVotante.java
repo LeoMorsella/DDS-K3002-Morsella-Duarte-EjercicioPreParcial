@@ -1,13 +1,17 @@
 package Servicios.Votacion;
 
 import Modelo.Colegio.*;
+import Modelo.Factories.FactoryAlumno;
+import Modelo.Factories.FactoryCurso;
+import Modelo.Factories.FactoryGraduado;
+import Modelo.Factories.FactoryVotante;
 
 import java.util.List;
 import java.util.Objects;
 
 public class CrearVotante {
 
-    public FactoryVotante crearFactory(String tipo){
+    public static FactoryVotante crearFactory(String tipo){
         FactoryVotante factory = null;
         if(Objects.equals(tipo, "alumno")) factory = new FactoryAlumno();
         else if(Objects.equals(tipo, "graduado")) factory = new FactoryGraduado();
@@ -15,11 +19,12 @@ public class CrearVotante {
         return factory;
     }
 
-    public Votante crearVotante(String tipo, List<Object> parametros, Colegio colegio){
+    public static Votante crearVotante(String tipo, List<Object> parametros, Colegio colegio){
         FactoryVotante factory = crearFactory(tipo);
         Votante newVotante = factory.crearVotante();
         newVotante.cargarParametros(parametros);
         colegio.addVotante(newVotante);
+        if(newVotante.esDestacado()) colegio.addDestacado(newVotante);
         return newVotante;
     }
 

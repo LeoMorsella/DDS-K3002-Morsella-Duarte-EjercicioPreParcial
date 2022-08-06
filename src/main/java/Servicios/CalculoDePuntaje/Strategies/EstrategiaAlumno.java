@@ -1,4 +1,4 @@
-package Servicios.CalculoDePuntaje;
+package Servicios.CalculoDePuntaje.Strategies;
 
 import Modelo.Colegio.Alumno;
 import Modelo.Colegio.Votante;

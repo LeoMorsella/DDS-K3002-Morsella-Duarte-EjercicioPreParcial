@@ -1,4 +1,4 @@
-package Servicios.CalculoDePuntaje;
+package Servicios.CalculoDePuntaje.Strategies;
 
 import Modelo.Colegio.Curso;
 import Modelo.Colegio.Votante;
@@ -6,6 +6,6 @@ import Modelo.Colegio.Votante;
 public class EstrategiaCurso extends EstrategiaVotacion{
 
     public double puntuarVotante(Votante votante){
-        return votante.getPromedio() * ((Curso) votante).getVotantes().size();
+        return votante.getPromedio() * ((Curso) votante).getAlumnos().size();
     }
 }

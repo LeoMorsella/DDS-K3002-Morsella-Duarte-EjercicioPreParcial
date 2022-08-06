@@ -24,7 +24,7 @@ public class APIPeliculaService {
         int status = response.getStatus();
         System.out.println("Status: " + status);
         String responseBody = response.readEntity(String.class);
-        if (status == 200) {
+        if (!(responseBody.contains("Movie not found!"))) {
             System.out.println("response =" + responseBody);
             PeliculaResponse newPelicula = objectMapper.readValue(responseBody,PeliculaResponse.class);
             System.out.println("Titulo: "+ newPelicula.getTitle());
