@@ -5,8 +5,8 @@ import Modelo.Pelicula.PeliculaRequest;
 import java.util.ArrayList;
 
 public class Colegio {
-    ArrayList<Votante> votantes;
-    ArrayList<Votante> destacados;
+    ArrayList<Votante> votantes = new ArrayList<>();
+    ArrayList<Votante> destacados = new ArrayList<>();
 
     public void setVotantes(ArrayList<Votante> votantes) {
         this.votantes = votantes;

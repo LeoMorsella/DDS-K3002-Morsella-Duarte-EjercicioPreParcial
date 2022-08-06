@@ -7,7 +7,7 @@ import java.util.ArrayList;
 //Esta clase es provisoria hasta implementar hibernate
 public class RepoVotaciones {
 
-    ArrayList<Votacion> votaciones;
+    ArrayList<Votacion> votaciones = new ArrayList<>();
     static RepoVotaciones instance = null;
 
     public static RepoVotaciones getRepo(){

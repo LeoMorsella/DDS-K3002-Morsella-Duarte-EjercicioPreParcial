@@ -9,7 +9,7 @@ import Servicios.Pelicula.ValidarPelicula;
 
 public class RealizarVotacion {
 
-    public void nuevaVotacion(PeliculaRequest pelicula, Votante votante)throws Exception{
+    public static void nuevaVotacion(PeliculaRequest pelicula, Votante votante)throws Exception{
         if(votante.getPeliculaVotada() != null) {
             System.out.println("Este votante ya eligió su pelicula");
             throw new Exception();
@@ -17,7 +17,7 @@ public class RealizarVotacion {
         generarVotacion(pelicula, votante);
     }
 
-    public void modificarVotacion(PeliculaRequest pelicula, Votante votante) throws Exception{
+    static public void modificarVotacion(PeliculaRequest pelicula, Votante votante) throws Exception{
         if(votante.getPeliculaVotada() == null) {
             System.out.println("Este votante no eligió una pelicula aun");
             throw new Exception();
@@ -25,7 +25,7 @@ public class RealizarVotacion {
         generarVotacion(pelicula, votante);
     }
 
-    public void generarVotacion(PeliculaRequest pelicula, Votante votante) throws Exception{
+    static public void generarVotacion(PeliculaRequest pelicula, Votante votante) throws Exception{
         PeliculaResponse peliculaVotada = ValidarPelicula.validarPelicula(pelicula);
         if(peliculaVotada!=null){
             Votacion nuevaVotacion = new Votacion(peliculaVotada, votante);
