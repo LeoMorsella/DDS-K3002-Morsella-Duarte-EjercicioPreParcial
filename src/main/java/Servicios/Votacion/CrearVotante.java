@@ -1,4 +1,6 @@
-package Modelo.Colegio;
+package Servicios.Votacion;
+
+import Modelo.Colegio.*;
 
 import java.util.List;
 import java.util.Objects;
