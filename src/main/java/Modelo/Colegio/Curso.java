@@ -2,17 +2,21 @@ package Modelo.Colegio;
 
 import Servicios.Pelicula.APIPelicula.PeliculaResponse;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Curso extends Votante{
 
+
     ArrayList<Alumno> alumnos;
 
-    Double grado;
-    String nombre;
+
+  
     Votacion peliculaVotada;
     Double promedio;
+    Double grado;
+    String nombre;
     public Curso Curso() {return new Curso();}
 
     public ArrayList<Alumno> getAlumnos() {
