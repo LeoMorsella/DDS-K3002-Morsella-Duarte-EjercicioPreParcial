@@ -6,6 +6,7 @@ import java.util.List;
 // Actualizar para prototype
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo_votante", discriminatorType = DiscriminatorType.STRING)
 public abstract class Votante {
     String nombre;
 
