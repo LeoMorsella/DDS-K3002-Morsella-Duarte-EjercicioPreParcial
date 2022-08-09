@@ -1,10 +1,16 @@
 package Modelo.Colegio;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.util.List;
 
 @Entity
 public class Graduado extends Votante{
+
+
+
     boolean pagaAportes;
     public Graduado Graduado() { return new Graduado();}
 

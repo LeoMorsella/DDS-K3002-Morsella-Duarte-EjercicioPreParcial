@@ -11,7 +11,7 @@ public abstract class Votante {
 
     @Id
     @GeneratedValue
-    String id;
+    int id_votante;
 
     @Transient
     Votacion peliculaVotada;
