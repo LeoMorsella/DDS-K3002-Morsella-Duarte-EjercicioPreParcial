@@ -21,7 +21,7 @@ public class PersistenciaTest extends AbstractPersistenceTest implements WithGlo
     @Test
     public void QueryObtenerVotante() throws Exception {
         Repositorio repositorio = new Repositorio();
-        setDatabase();
+    setDatabase();
         List<Votante> votantes = repositorio.getVotantes();
 
         Assert.assertEquals(3,votantes.size());
