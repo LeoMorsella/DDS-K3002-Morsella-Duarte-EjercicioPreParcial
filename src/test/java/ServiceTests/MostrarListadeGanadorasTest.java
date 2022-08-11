@@ -10,10 +10,18 @@ import Servicios.Votacion.CrearVotante;
 import Servicios.Votacion.RealizarVotacion;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import Modelo.Colegio.*;
+import Servicios.Pelicula.APIPelicula.APIPeliculaService;
+import Servicios.Pelicula.APIPelicula.PeliculaResponse;
+import org.junit.After;
+import org.junit.Assert;
+
+import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
+import org.uqbarproject.jpa.java8.extras.test.AbstractPersistenceTest;
 
 import java.util.List;
 
-public class MostrarListadeGanadorasTest {
+public class MostrarListadeGanadorasTest extends AbstractPersistenceTest implements WithGlobalEntityManager {
 
     Colegio colegioPrueba = new Colegio();
 
@@ -22,6 +30,8 @@ public class MostrarListadeGanadorasTest {
         PeliculaRequest peliculaRequest = new PeliculaRequest("Underdogs", "2013");
         Votante nuevoVotante = CrearVotante.crearVotante("alumno", parametrosAlumno, colegioPrueba);
         RealizarVotacion.nuevaVotacion(peliculaRequest, nuevoVotante);
+
+
     }
 
     public void cargarCaso2() throws Exception {
@@ -55,9 +65,10 @@ public class MostrarListadeGanadorasTest {
     //Estrategia Alumno Destacado, este valor debe dar 94,4 por la configuracion del alumno y la pelicula
     @Test
     public void puntuarCaso1() throws Exception {
-        RepoVotaciones repoV = RepoVotaciones.getRepo();
+        //RepoVotaciones repoV = RepoVotaciones.getRepo();
+        Repositorio repositorio = Repositorio.getRepo();
         cargarCaso1();
-        Assertions.assertEquals(94.4, PuntajeService.calcularPuntaje(repoV.getVotaciones().get(0)));
+        Assertions.assertEquals(94.4, PuntajeService.calcularPuntaje(repositorio.getVotaciones().get(0)));
     }
 
     //Estrategia Alumno no destacado, debería dar 60

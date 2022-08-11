@@ -1,6 +1,7 @@
 package Servicios.CalculoDePuntaje;
 
 import Modelo.Colegio.RepoVotaciones;
+import Modelo.Colegio.Repositorio;
 import Modelo.Colegio.Votacion;
 
 import java.io.IOException;
@@ -15,7 +16,8 @@ public class MostrarListaGanadoras {
 
     static public List<Votacion> mostrarLista() throws IOException{
 
-        List<Votacion> votaciones = RepoVotaciones.getRepo().getVotaciones();
+        //List<Votacion> votaciones = RepoVotaciones.getRepo().getVotaciones();
+        List<Votacion> votaciones = Repositorio.getRepo().getVotaciones();
 
         List<Double> puntuaciones = votaciones.stream()
                 .map(votacion -> {
