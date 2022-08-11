@@ -1,3 +1,5 @@
+package PersistenciaTests;
+
 import Modelo.Colegio.*;
 import Servicios.Pelicula.APIPelicula.APIPeliculaService;
 import Servicios.Pelicula.APIPelicula.PeliculaResponse;

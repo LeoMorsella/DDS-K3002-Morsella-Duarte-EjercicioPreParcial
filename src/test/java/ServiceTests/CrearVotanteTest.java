@@ -1,4 +1,5 @@
-import Modelo.Colegio.Alumno;
+package ServiceTests;
+
 import Modelo.Colegio.Colegio;
 import Modelo.Colegio.Votante;
 import Servicios.Votacion.CrearVotante;
@@ -33,7 +34,7 @@ public class CrearVotanteTest {
     public List<Object> cargarParametrosCurso(){
         List<Object> parametrosCurso = new ArrayList<>();
         ArrayList<Votante> alumnos = new ArrayList<>();
-        parametrosCurso.add("6toA");
+        parametrosCurso.add("4toA");
         parametrosCurso.add(8.6);
         parametrosCurso.add(4.0);
         List<Object> parametrosAlumn = cargarParametrosAlumno1();
@@ -47,11 +48,19 @@ public class CrearVotanteTest {
         return parametrosCurso;
     }
 
-    public List<Object> cargarParametrosGraduado(){
+    public List<Object> cargarParametrosGraduado1(){
         List<Object> parametrosGraduado = new ArrayList<>();
         parametrosGraduado.add("juan");
         parametrosGraduado.add(8.6);
-        parametrosGraduado.add(false);;
+        parametrosGraduado.add(true);
+        return parametrosGraduado;
+    }
+
+    public List<Object> cargarParametrosGraduado2(){
+        List<Object> parametrosGraduado = new ArrayList<>();
+        parametrosGraduado.add("andrea");
+        parametrosGraduado.add(10.0);
+        parametrosGraduado.add(false);
         return parametrosGraduado;
     }
     @Test
@@ -68,7 +77,7 @@ public class CrearVotanteTest {
 
     @Test
     public void crearGraduadoTest(){
-        List<Object> parametrosGraduado = cargarParametrosGraduado();
+        List<Object> parametrosGraduado = cargarParametrosGraduado1();
         Assertions.assertDoesNotThrow(()->CrearVotante.crearVotante("graduado", parametrosGraduado, colegioDePrueba));
     }
 

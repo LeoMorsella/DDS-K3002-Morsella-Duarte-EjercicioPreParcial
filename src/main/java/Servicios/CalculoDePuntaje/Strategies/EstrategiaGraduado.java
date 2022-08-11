@@ -6,8 +6,11 @@ import Modelo.Colegio.Votante;
 public class EstrategiaGraduado extends EstrategiaVotacion {
 
     public double puntuarVotante(Votante votante){
-        if(((Graduado) votante).getPagaAportes()) return votante.getPromedio();
-        return 0;
+        if(((Graduado) votante).getPagaAportes()) {
+            if(votante.esDestacado()) return votante.getPromedio() + 20;
+            else return votante.getPromedio();
+        }
+        else return 0;
     }
 
 }

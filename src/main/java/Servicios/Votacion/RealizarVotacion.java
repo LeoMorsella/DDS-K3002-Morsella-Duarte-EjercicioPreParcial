@@ -31,7 +31,7 @@ public class RealizarVotacion {
             Votacion nuevaVotacion = new Votacion(peliculaVotada, votante);
             votante.setPeliculaVotada(nuevaVotacion);
             //Despues esto se cambia con hibernate
-            RepoVotaciones repoVotaciones = new RepoVotaciones();
+            RepoVotaciones repoVotaciones = RepoVotaciones.getRepo();
             repoVotaciones.getVotaciones().add(nuevaVotacion);
             //hasta aca
         }

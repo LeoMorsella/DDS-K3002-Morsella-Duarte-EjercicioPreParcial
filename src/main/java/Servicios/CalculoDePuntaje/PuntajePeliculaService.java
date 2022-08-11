@@ -24,14 +24,14 @@ public class PuntajePeliculaService {
         List <String> origenLista = separarPorComas(origen);
 
         if(origenLista.stream().anyMatch( pais -> pais.equals("Argentina"))) return 20;
-        else if (origenLista.stream().anyMatch(paisesLatinos::contains)) return 10;
+        else if (origenLista.stream().anyMatch(pais -> paisesLatinos.contains(pais +" "))) return 10;
         else return 0;
     }
 
     static private double puntuarIdioma(String idiomas){
         List <String> idiomasLista = separarPorComas(idiomas);
 
-        if(idiomasLista.stream().anyMatch(idioma -> idioma == "Spanish")) return 20;
+        if(idiomasLista.contains("Spanish")) return 20;
         return 0;
     }
     static private List<String> getPaisesLatinos() throws IOException {

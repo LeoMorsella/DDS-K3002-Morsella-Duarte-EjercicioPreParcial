@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class PuntajeService {
 
-    static double calcularPuntaje(Votacion votacion) throws IOException {
+    public static double calcularPuntaje(Votacion votacion) throws IOException {
         PuntajeVotadorService puntajeVotadorService = new PuntajeVotadorService();
         Votante votante = votacion.getVotante();
         if(votante.getClass() == Alumno.class)

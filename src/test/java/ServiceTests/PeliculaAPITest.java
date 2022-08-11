@@ -1,3 +1,5 @@
+package ServiceTests;
+
 import Modelo.Pelicula.PeliculaRequest;
 import Servicios.Pelicula.APIPelicula.APIPeliculaService;
 import Servicios.Pelicula.ValidarPelicula;

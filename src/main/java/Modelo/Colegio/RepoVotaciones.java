@@ -11,8 +11,8 @@ public class RepoVotaciones {
     static RepoVotaciones instance = null;
 
     public static RepoVotaciones getRepo(){
-        if(instance == null) return new RepoVotaciones();
-        else return instance;
+        if(instance == null) {instance = new RepoVotaciones();}
+        return instance;
     }
 
 
