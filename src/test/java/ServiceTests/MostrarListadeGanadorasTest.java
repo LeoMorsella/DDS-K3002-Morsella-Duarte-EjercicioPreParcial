@@ -24,6 +24,7 @@ import java.util.List;
 public class MostrarListadeGanadorasTest extends AbstractPersistenceTest implements WithGlobalEntityManager {
 
     Colegio colegioPrueba = new Colegio();
+    Repositorio repo = new Repositorio();
 
     public void cargarCaso1() throws Exception {
         List<Object> parametrosAlumno = new CrearVotanteTest().cargarParametrosAlumno1();
@@ -65,10 +66,10 @@ public class MostrarListadeGanadorasTest extends AbstractPersistenceTest impleme
     //Estrategia Alumno Destacado, este valor debe dar 94,4 por la configuracion del alumno y la pelicula
     @Test
     public void puntuarCaso1() throws Exception {
-        //RepoVotaciones repoV = RepoVotaciones.getRepo();
-        Repositorio repositorio = Repositorio.getRepo();
+        RepoVotaciones repoV = RepoVotaciones.getRepo();
+        //Repositorio repositorio = new Repositorio();
         cargarCaso1();
-        Assertions.assertEquals(94.4, PuntajeService.calcularPuntaje(repositorio.getVotaciones().get(0)));
+        Assertions.assertEquals(94.4, PuntajeService.calcularPuntaje(repoV.getVotaciones().get(0)));
     }
 
     //Estrategia Alumno no destacado, debería dar 60
