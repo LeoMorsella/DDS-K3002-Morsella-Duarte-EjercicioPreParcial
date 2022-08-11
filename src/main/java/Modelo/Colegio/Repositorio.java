@@ -38,4 +38,12 @@ public class Repositorio implements WithGlobalEntityManager {
     public void persistirVotacion(Votacion votacion) {
         entityManager().persist(votacion);
     }
+
+    public void persistirVotante(Votante votante) {
+        entityManager().persist(votante);
+    }
+
+    public void persistirPelicula(PeliculaResponse pelicula) {
+        entityManager().persist(pelicula);
+    }
 }

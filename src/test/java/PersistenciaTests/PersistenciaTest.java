@@ -14,7 +14,7 @@ import java.util.List;
 public class PersistenciaTest extends AbstractPersistenceTest implements WithGlobalEntityManager {
 
     @After
-    public void rollBakc() {
+    public void rollBack() {
         rollbackTransaction();
     }
 
