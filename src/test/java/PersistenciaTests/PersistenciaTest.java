@@ -21,7 +21,7 @@ public class PersistenciaTest extends AbstractPersistenceTest implements WithGlo
     @Test
     public void QueryObtenerVotante() throws Exception {
         Repositorio repositorio = new Repositorio();
-    setDatabase();
+        setDatabase();
         List<Votante> votantes = repositorio.getVotantes();
 
         Assert.assertEquals(3,votantes.size());
@@ -39,7 +39,7 @@ public class PersistenciaTest extends AbstractPersistenceTest implements WithGlo
     @Test
     public void QueryObtenerGraduados() throws Exception {
         Repositorio repositorio = new Repositorio();
-        setDatabase();
+       setDatabase();
         List<Graduado> graduados = repositorio.getGraduados();
 
         Assert.assertEquals(1,graduados.size());
@@ -107,6 +107,7 @@ public class PersistenciaTest extends AbstractPersistenceTest implements WithGlo
         Votacion votacion1 = new Votacion(pelicula2,alumno);
         entityManager().persist(votacion1);
 
+       // commitTransaction();
 
 
     }
