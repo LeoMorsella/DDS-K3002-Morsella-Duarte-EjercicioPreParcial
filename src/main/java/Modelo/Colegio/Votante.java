@@ -18,6 +18,8 @@ public abstract class Votante {
     Votacion peliculaVotada;
 
     Double promedio;
+
+    boolean esDestacado;
     public String getNombre() {
         return nombre;
     }
