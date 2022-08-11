@@ -14,14 +14,14 @@ public class MostrarListadeGanadorasTest {
 
     public void cargarCaso1() throws Exception {
         List<Object> parametrosAlumno = new CrearVotanteTest().cargarParametrosAlumno1();
-        PeliculaRequest peliculaRequest = new PeliculaRequest("The Batman", "2022");
+        PeliculaRequest peliculaRequest = new PeliculaRequest("Underdogs", "2013");
         Votante nuevoVotante = CrearVotante.crearVotante("alumno", parametrosAlumno, colegioPrueba);
         RealizarVotacion.nuevaVotacion(peliculaRequest, nuevoVotante);
     }
 
     public void cargarCaso2() throws Exception {
         List<Object> parametrosAlumno = new CrearVotanteTest().cargarParametrosAlumno2();
-        PeliculaRequest peliculaRequest = new PeliculaRequest("Titanic", "1997");
+        PeliculaRequest peliculaRequest = new PeliculaRequest("Encanto", "2021");
         Votante nuevoVotante = CrearVotante.crearVotante("alumno", parametrosAlumno, colegioPrueba);
         RealizarVotacion.nuevaVotacion(peliculaRequest, nuevoVotante);
     }
