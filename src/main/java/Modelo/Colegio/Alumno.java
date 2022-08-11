@@ -1,10 +1,12 @@
 package Modelo.Colegio;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@DiscriminatorValue("Alumno")
 public class Alumno extends Votante {
+
     Double grado;
 
     boolean esAbanderado;

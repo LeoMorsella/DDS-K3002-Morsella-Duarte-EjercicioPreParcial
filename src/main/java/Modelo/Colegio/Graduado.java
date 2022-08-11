@@ -1,10 +1,14 @@
 package Modelo.Colegio;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@DiscriminatorValue("Graduado")
 public class Graduado extends Votante{
+
+
+
     boolean pagaAportes;
     public Graduado Graduado() { return new Graduado();}
 
