@@ -33,12 +33,12 @@ public class RealizarVotacion   {
         if(peliculaVotada!=null){
             Votacion nuevaVotacion = new Votacion(peliculaVotada, votante);
             votante.setPeliculaVotada(nuevaVotacion);
-            Repositorio repositorio = Repositorio.getRepo();
-            repositorio.persistirVotacion(nuevaVotacion);
+            //Repositorio repo = new Repositorio();
+            //repo.persistirVotacion(nuevaVotacion);
 
             //Despues esto se cambia con hibernate
-            //RepoVotaciones repoVotaciones = RepoVotaciones.getRepo();
-            //repoVotaciones.getVotaciones().add(nuevaVotacion);
+            RepoVotaciones repoVotaciones = RepoVotaciones.getRepo();
+            repoVotaciones.getVotaciones().add(nuevaVotacion);
             //hasta aca
         }
     }

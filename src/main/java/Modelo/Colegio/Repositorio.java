@@ -10,10 +10,6 @@ public class Repositorio implements WithGlobalEntityManager {
 
     static Repositorio instance = null;
 
-    public static Repositorio getRepo(){
-        if(instance == null) {instance = new Repositorio();}
-        return instance;
-    }
 
     public List<Votante> getVotantes() {
         return entityManager().createQuery("FROM Votante").getResultList();
