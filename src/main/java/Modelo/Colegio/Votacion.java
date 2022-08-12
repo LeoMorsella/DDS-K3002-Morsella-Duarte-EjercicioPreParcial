@@ -1,13 +1,8 @@
 package Modelo.Colegio;
 
-import Modelo.Colegio.Votante;
+import Modelo.Pelicula.PeliculaResponse;
 
-import Servicios.Pelicula.APIPelicula.PeliculaResponse;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Votacion {
@@ -16,7 +11,7 @@ public class Votacion {
   int id_votacion;
   @ManyToOne
   PeliculaResponse pelicula;
-  @ManyToOne
+  @OneToOne
   Votante votante;
 
   public Votacion(PeliculaResponse pelicula, Votante votante) {

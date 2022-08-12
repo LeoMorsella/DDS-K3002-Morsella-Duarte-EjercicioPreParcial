@@ -2,21 +2,23 @@ package PersistenciaTests;
 
 import Modelo.Colegio.*;
 import Servicios.Pelicula.APIPelicula.APIPeliculaService;
-import Servicios.Pelicula.APIPelicula.PeliculaResponse;
-import org.junit.After;
+import Modelo.Pelicula.PeliculaResponse;
 import org.junit.Assert;
 import org.junit.Test;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.test.AbstractPersistenceTest;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import java.util.List;
 
 public class PersistenciaTest extends AbstractPersistenceTest implements WithGlobalEntityManager {
 
-    @After
+    /*@After
     public void rollBack() {
         rollbackTransaction();
-    }
+    }*/
 
     @Test
     public void QueryObtenerVotante() throws Exception {
@@ -74,6 +76,12 @@ public class PersistenciaTest extends AbstractPersistenceTest implements WithGlo
     @Test
     public void setDatabase() throws Exception {
 
+        EntityManager em = Persistence.createEntityManagerFactory("db").createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        if (!tx.isActive()) {
+            tx.begin();
+        }
+
         //Set de votantes
         Alumno alumno = new Alumno();
         alumno.setNombre("AlumnoTest");
@@ -107,7 +115,9 @@ public class PersistenciaTest extends AbstractPersistenceTest implements WithGlo
         Votacion votacion1 = new Votacion(pelicula2,alumno);
         entityManager().persist(votacion1);
 
-
+        if (tx.isActive()) {
+            tx.commit();
+        }
 
     }
 }

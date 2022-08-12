@@ -25,7 +25,8 @@ public class CrearVotante {
         Votante newVotante = factory.crearVotante();
         newVotante.cargarParametros(parametros);
         colegio.addVotante(newVotante);
-        new Repositorio().persistirVotante(newVotante);
+        Repositorio repo = new Repositorio();
+        repo.persistir(newVotante);
         if(newVotante.esDestacado()) colegio.addDestacado(newVotante);
         return newVotante;
     }

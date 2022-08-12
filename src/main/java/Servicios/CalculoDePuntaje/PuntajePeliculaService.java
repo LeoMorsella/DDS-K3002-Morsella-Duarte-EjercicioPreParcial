@@ -1,6 +1,6 @@
 package Servicios.CalculoDePuntaje;
 
-import Servicios.Pelicula.APIPelicula.PeliculaResponse;
+import Modelo.Pelicula.PeliculaResponse;
 
 import java.io.File;
 import java.io.FileReader;

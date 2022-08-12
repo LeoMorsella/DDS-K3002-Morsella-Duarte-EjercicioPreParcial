@@ -11,10 +11,6 @@ import Servicios.Votacion.RealizarVotacion;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import Modelo.Colegio.*;
-import Servicios.Pelicula.APIPelicula.APIPeliculaService;
-import Servicios.Pelicula.APIPelicula.PeliculaResponse;
-import org.junit.After;
-import org.junit.Assert;
 
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.test.AbstractPersistenceTest;

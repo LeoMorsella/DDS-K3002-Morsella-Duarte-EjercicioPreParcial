@@ -2,7 +2,7 @@ package Servicios.Pelicula;
 
 import Modelo.Pelicula.PeliculaRequest;
 import Servicios.Pelicula.APIPelicula.APIPeliculaService;
-import Servicios.Pelicula.APIPelicula.PeliculaResponse;
+import Modelo.Pelicula.PeliculaResponse;
 
 public class ValidarPelicula {
 
