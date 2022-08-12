@@ -14,8 +14,7 @@ public abstract class Votante {
     @GeneratedValue
     int id_votante;
 
-    //cambiar
-    @OneToOne
+    @Transient
     Votacion peliculaVotada;
 
     Double promedio;

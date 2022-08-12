@@ -1,6 +1,8 @@
 package Modelo.Colegio;
 
-import Modelo.Pelicula.PeliculaResponse;
+import Modelo.Colegio.Votante;
+
+import Servicios.Pelicula.APIPelicula.PeliculaResponse;
 
 import javax.persistence.*;
 

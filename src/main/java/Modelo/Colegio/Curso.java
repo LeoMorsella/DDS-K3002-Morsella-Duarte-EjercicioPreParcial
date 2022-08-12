@@ -1,5 +1,7 @@
 package Modelo.Colegio;
 
+import Servicios.Pelicula.APIPelicula.PeliculaResponse;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;

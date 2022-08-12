@@ -6,7 +6,6 @@ import Modelo.Factories.FactoryCurso;
 import Modelo.Factories.FactoryGraduado;
 import Modelo.Factories.FactoryVotante;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,8 +24,6 @@ public class CrearVotante {
         Votante newVotante = factory.crearVotante();
         newVotante.cargarParametros(parametros);
         colegio.addVotante(newVotante);
-        Repositorio repo = new Repositorio();
-        repo.persistir(newVotante);
         if(newVotante.esDestacado()) colegio.addDestacado(newVotante);
         return newVotante;
     }

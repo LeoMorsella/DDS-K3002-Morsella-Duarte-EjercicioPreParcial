@@ -1,11 +1,14 @@
 package Servicios.Votacion;
 
+import Modelo.Colegio.RepoVotaciones;
 import Modelo.Colegio.Repositorio;
 import Modelo.Colegio.Votacion;
 import Modelo.Colegio.Votante;
 import Modelo.Pelicula.PeliculaRequest;
-import Modelo.Pelicula.PeliculaResponse;
+import Servicios.Pelicula.APIPelicula.PeliculaResponse;
 import Servicios.Pelicula.ValidarPelicula;
+import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
+import org.uqbarproject.jpa.java8.extras.test.AbstractPersistenceTest;
 
 public class RealizarVotacion   {
 
@@ -30,13 +33,12 @@ public class RealizarVotacion   {
         if(peliculaVotada!=null){
             Votacion nuevaVotacion = new Votacion(peliculaVotada, votante);
             votante.setPeliculaVotada(nuevaVotacion);
-            Repositorio repo = new Repositorio();
-            repo.persistir(peliculaVotada);
-            repo.persistir(nuevaVotacion);
+            //Repositorio repo = new Repositorio();
+            //repo.persistirVotacion(nuevaVotacion);
 
             //Despues esto se cambia con hibernate
-            //RepoVotaciones repoVotaciones = RepoVotaciones.getRepo();
-            //repoVotaciones.getVotaciones().add(nuevaVotacion);
+            RepoVotaciones repoVotaciones = RepoVotaciones.getRepo();
+            repoVotaciones.getVotaciones().add(nuevaVotacion);
             //hasta aca
         }
     }
