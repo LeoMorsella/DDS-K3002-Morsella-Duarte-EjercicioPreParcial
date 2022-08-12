@@ -22,15 +22,17 @@ public class MostrarListadeGanadorasTest extends AbstractPersistenceTest impleme
     Colegio colegioPrueba = new Colegio();
     Repositorio repo = new Repositorio();
 
+    @Test
     public void cargarCaso1() throws Exception {
         List<Object> parametrosAlumno = new CrearVotanteTest().cargarParametrosAlumno1();
         PeliculaRequest peliculaRequest = new PeliculaRequest("Underdogs", "2013");
         Votante nuevoVotante = CrearVotante.crearVotante("alumno", parametrosAlumno, colegioPrueba);
         RealizarVotacion.nuevaVotacion(peliculaRequest, nuevoVotante);
+        commitTransaction();
 
 
     }
-
+    @Test
     public void cargarCaso2() throws Exception {
         List<Object> parametrosAlumno = new CrearVotanteTest().cargarParametrosAlumno2();
         PeliculaRequest peliculaRequest = new PeliculaRequest("A movie of eggs", "2006");
@@ -65,6 +67,8 @@ public class MostrarListadeGanadorasTest extends AbstractPersistenceTest impleme
         RepoVotaciones repoV = RepoVotaciones.getRepo();
         //Repositorio repositorio = new Repositorio();
         cargarCaso1();
+
+
         Assertions.assertEquals(94.4, PuntajeService.calcularPuntaje(repoV.getVotaciones().get(0)));
     }
 
