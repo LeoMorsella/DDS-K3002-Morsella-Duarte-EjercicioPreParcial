@@ -77,7 +77,7 @@ public class MostrarListadeGanadorasTest extends AbstractPersistenceTest impleme
     public void puntuarCaso2() throws Exception {
         RepoVotaciones repoV = RepoVotaciones.getRepo();
         cargarCaso2();
-        Assertions.assertEquals(60, PuntajeService.calcularPuntaje(repoV.getVotaciones().get(0)));
+        Assertions.assertEquals(60, PuntajeService.calcularPuntaje(repoV.getVotaciones().get(1)));
     }
 
     //estrategia Curso, debería dar 17,2
@@ -85,7 +85,7 @@ public class MostrarListadeGanadorasTest extends AbstractPersistenceTest impleme
     public void puntuarCaso3() throws Exception {
         RepoVotaciones repoV = RepoVotaciones.getRepo();
         cargarCaso3();
-        Assertions.assertEquals(17.2,  PuntajeService.calcularPuntaje(repoV.getVotaciones().get(0)));
+        Assertions.assertEquals(17.2,  PuntajeService.calcularPuntaje(repoV.getVotaciones().get(2)));
     }
 
     //Estrategia Graduado, debería dar 28,6
@@ -93,7 +93,7 @@ public class MostrarListadeGanadorasTest extends AbstractPersistenceTest impleme
     public void puntuarCaso4() throws Exception {
         RepoVotaciones repoV = RepoVotaciones.getRepo();
         cargarCaso4();
-        Assertions.assertEquals(28.6, PuntajeService.calcularPuntaje(repoV.getVotaciones().get(0)));
+        Assertions.assertEquals(28.6, PuntajeService.calcularPuntaje(repoV.getVotaciones().get(3)));
     }
 
     //debería mostrar los primeros 4 casos

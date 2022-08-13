@@ -16,6 +16,7 @@ public class Votacion {
   @OneToOne
   Votante votante;
 
+  public  Votacion()  {}
   public Votacion(PeliculaResponse pelicula, Votante votante) {
     this.pelicula = pelicula;
     this.votante = votante;
