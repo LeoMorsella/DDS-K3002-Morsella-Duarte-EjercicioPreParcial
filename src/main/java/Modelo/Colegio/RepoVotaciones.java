@@ -5,7 +5,7 @@ import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
 import java.util.ArrayList;
 
-//Esta clase es provisoria hasta implementar hibernate
+
 public class RepoVotaciones implements WithGlobalEntityManager {
 
     ArrayList<Votacion> votaciones = new ArrayList<>();

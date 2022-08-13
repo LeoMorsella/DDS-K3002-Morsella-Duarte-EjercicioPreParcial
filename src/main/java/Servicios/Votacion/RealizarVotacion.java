@@ -36,11 +36,11 @@ public class RealizarVotacion   {
             //Repositorio repo = new Repositorio();
             //repo.persistirVotacion(nuevaVotacion);
 
-            //Despues esto se cambia con hibernate
+
             RepoVotaciones repoVotaciones = RepoVotaciones.getRepo();
             repoVotaciones.getVotaciones().add(nuevaVotacion);
             repoVotaciones.persistirVotaciones();
-            //hasta aca
+
         }
     }
 }
