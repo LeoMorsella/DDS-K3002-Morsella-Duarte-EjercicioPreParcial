@@ -1,8 +1,10 @@
 package PersistenciaTests;
 
 import Modelo.Colegio.*;
+import Modelo.Pelicula.PeliculaRequest;
 import Servicios.Pelicula.APIPelicula.APIPeliculaService;
 import Servicios.Pelicula.APIPelicula.PeliculaResponse;
+import Servicios.Votacion.RealizarVotacion;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
@@ -106,6 +108,9 @@ public class PersistenciaTest extends AbstractPersistenceTest implements WithGlo
 
         Votacion votacion1 = new Votacion(pelicula2,alumno);
         entityManager().persist(votacion1);
+
+        PeliculaRequest peli = new PeliculaRequest("Moonfall","2022");
+        RealizarVotacion.generarVotacion(peli,graduado);
 
         commitTransaction();
 
