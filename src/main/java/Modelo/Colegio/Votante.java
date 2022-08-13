@@ -16,13 +16,14 @@ public abstract class Votante {
 
     @Transient
     Votacion peliculaVotada;
-
     Double promedio;
 
     boolean esDestacado;
     public String getNombre() {
         return nombre;
     }
+
+    public boolean getEsDestacado(){ return this.esDestacado;}
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -48,4 +49,8 @@ public abstract class Votante {
     abstract public void cargarParametros(List<Object> parametros);
 
     abstract public boolean esDestacado();
+
+    public void setEsDestacado(){
+        this.esDestacado = esDestacado();
+    }
 }

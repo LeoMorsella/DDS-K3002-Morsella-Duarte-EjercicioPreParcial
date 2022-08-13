@@ -5,10 +5,10 @@ import Modelo.Colegio.Votante;
 
 public class EstrategiaGraduado extends EstrategiaVotacion {
 
-    public double puntuarVotante(Votante votante){
-        if(((Graduado) votante).getPagaAportes()) {
-            if(votante.esDestacado()) return votante.getPromedio() + 20;
-            else return votante.getPromedio();
+    public double puntuarVotante(Votante alumno){
+        if(((Graduado) alumno).getPagaAportes()) {
+            if(alumno.getEsDestacado()) return alumno.getPromedio() + 20;
+            else return alumno.getPromedio();
         }
         else return 0;
     }

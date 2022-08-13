@@ -14,7 +14,7 @@ public class RealizarVotacionTest {
 
     @Test
     public void nuevaVotacionTest(){
-        List<Object> parametrosAlumno = new CrearVotanteTest().cargarParametrosAlumno1();
+        List<Object> parametrosAlumno = CargarCasos.cargarParametrosAlumno1();
         PeliculaRequest peliculaRequest = new PeliculaRequest("The Batman", "2022");
         Colegio colegioPrueba = new Colegio();
         Votante nuevoVotante = CrearVotante.crearVotante("alumno", parametrosAlumno, colegioPrueba);
@@ -23,7 +23,7 @@ public class RealizarVotacionTest {
 
     @Test
     public void modificarVotacionDeVotadorQueNoVoto(){
-        List<Object> parametrosGraduado = new CrearVotanteTest().cargarParametrosGraduado1();
+        List<Object> parametrosGraduado = CargarCasos.cargarParametrosGraduado1();
         PeliculaRequest peliculaRequest = new PeliculaRequest("The Batman", "2022");
         Colegio colegioPrueba = new Colegio();
         Votante nuevoVotante = CrearVotante.crearVotante("graduado", parametrosGraduado, colegioPrueba);

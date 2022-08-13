@@ -5,9 +5,9 @@ import Modelo.Colegio.Votante;
 
 public class EstrategiaAlumno extends EstrategiaVotacion{
 
-    public double puntuarVotante(Votante votante){
-        double puntajeTemp = votante.getPromedio() * ((Alumno) votante).getGrado();
-        if (votante.esDestacado()) puntajeTemp += 20;
+    public double puntuarVotante(Votante alumno){
+        double puntajeTemp = alumno.getPromedio() * ((Alumno) alumno).getGrado();
+        if (alumno.getEsDestacado()) puntajeTemp += 20;
         return puntajeTemp;
     }
 }

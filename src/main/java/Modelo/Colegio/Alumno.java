@@ -40,4 +40,5 @@ public class Alumno extends Votante {
     public boolean esDestacado(){
         return esAbanderado;
     }
+
 }

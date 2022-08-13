@@ -1,16 +1,19 @@
 package Servicios.Votacion;
 
-import Modelo.Colegio.RepoVotaciones;
-import Modelo.Colegio.Repositorio;
+
 import Modelo.Colegio.Votacion;
 import Modelo.Colegio.Votante;
 import Modelo.Pelicula.PeliculaRequest;
+import Servicios.BDutils;
 import Servicios.Pelicula.APIPelicula.PeliculaResponse;
 import Servicios.Pelicula.ValidarPelicula;
-import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
-import org.uqbarproject.jpa.java8.extras.test.AbstractPersistenceTest;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
-public class RealizarVotacion   {
+
+import javax.persistence.EntityManager;
+
+public class RealizarVotacion  {
 
     public static void nuevaVotacion(PeliculaRequest pelicula, Votante votante)throws Exception{
         if(votante.getPeliculaVotada() != null) {
@@ -25,21 +28,30 @@ public class RealizarVotacion   {
             System.out.println("Este votante no eligió una pelicula aun");
             throw new Exception();
         }
+
         generarVotacion(pelicula, votante);
     }
 
     static public void generarVotacion(PeliculaRequest pelicula, Votante votante) throws Exception{
         PeliculaResponse peliculaVotada = ValidarPelicula.validarPelicula(pelicula);
-        if(peliculaVotada!=null){
+        if(peliculaVotada!=null) {
             Votacion nuevaVotacion = new Votacion(peliculaVotada, votante);
+
+            //persistencia;
+            EntityManager em = BDutils.getEntityManager();
+            Session sess = BDutils.getCurrentSessionFromConfig(em).openSession();
+            BDutils.comenzarTransaccion(em);
             votante.setPeliculaVotada(nuevaVotacion);
-            //Repositorio repo = new Repositorio();
-            //repo.persistirVotacion(nuevaVotacion);
+            sess.update(votante);
 
-
-            RepoVotaciones repoVotaciones = RepoVotaciones.getRepo();
-            repoVotaciones.getVotaciones().add(nuevaVotacion);
-            repoVotaciones.persistirVotaciones();
+            try {
+                em.persist(nuevaVotacion.getPelicula());
+                em.persist(nuevaVotacion);
+            }
+            catch (Exception e) {
+                BDutils.rollback(em);
+            }
+            BDutils.commit(em);
 
         }
     }

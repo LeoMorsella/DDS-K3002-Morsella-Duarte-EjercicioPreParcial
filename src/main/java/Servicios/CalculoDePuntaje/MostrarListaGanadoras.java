@@ -3,6 +3,8 @@ package Servicios.CalculoDePuntaje;
 import Modelo.Colegio.RepoVotaciones;
 import Modelo.Colegio.Repositorio;
 import Modelo.Colegio.Votacion;
+import Servicios.BDutils;
+import org.hibernate.Session;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,9 +17,10 @@ public class MostrarListaGanadoras {
 
 
     static public List<Votacion> mostrarLista() throws IOException{
-        //Repositorio repo = new Repositorio();
-        List<Votacion> votaciones = RepoVotaciones.getRepo().getVotaciones();
-        //List<Votacion> votaciones = repo.getVotaciones();
+
+        Session sess = BDutils.getCurrentSessionFromConfig(BDutils.getEntityManager()).openSession();
+        List<Votacion> votaciones = sess.createQuery("SELECT v FROM Votacion v").list();
+
 
         List<Double> puntuaciones = votaciones.stream()
                 .map(votacion -> {

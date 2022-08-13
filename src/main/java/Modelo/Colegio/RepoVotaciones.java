@@ -16,13 +16,6 @@ public class RepoVotaciones implements WithGlobalEntityManager {
         return instance;
     }
 
-    public void persistirVotaciones() {
-        for(Votacion votacion : votaciones) {
-                 entityManager().persist(votacion);
-                 entityManager().persist(votacion.getPelicula());
-                 entityManager().persist(votacion.getVotante());
-        }
-    }
     public ArrayList<Votacion> getVotaciones() {
         return votaciones;
     }

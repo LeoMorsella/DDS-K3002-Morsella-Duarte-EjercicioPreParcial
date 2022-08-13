@@ -16,6 +16,8 @@ public class Curso extends Votante{
 
     Double grado;
 
+    int cantAlumnos;
+
     public Curso Curso() {return new Curso();}
 
     public ArrayList<Alumno> getAlumnos() {
@@ -38,6 +40,8 @@ public class Curso extends Votante{
     public void setGrado(Double grado) {
         this.grado = grado;
     }
+
+    public int getCantAlumnos(){return this.cantAlumnos;}
 
     @Override
     public String getNombre() {
@@ -65,9 +69,10 @@ public class Curso extends Votante{
         this.promedio = (Double) parametros.get(1);
         this.grado = (Double) parametros.get(2);
         this.alumnos = (ArrayList<Alumno>) parametros.get(3);
+        this.cantAlumnos = ((ArrayList<Alumno>) parametros.get(3)).size();
     }
 
     public boolean esDestacado(){
-        return promedio > (Double) 7.0 && alumnos.stream().filter(alumno -> alumno.esAbanderado()).count() > 2;
+        return promedio > (Double) 7.0 && this.alumnos.stream().filter(alumno -> alumno.esAbanderado()).count() > 2;
     }
 }
