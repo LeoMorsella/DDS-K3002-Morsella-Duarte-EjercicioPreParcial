@@ -36,12 +36,12 @@ public class Graduado extends Votante{
         this.pagaAportes = pagaAportes;
     }
 
-    public Votacion getPeliculaVotada() {
-        return peliculaVotada;
+    public Votacion getVotacion() {
+        return votacion;
     }
 
-    public void setPeliculaVotada(Votacion peliculaVotada) {
-        this.peliculaVotada = peliculaVotada;
+    public void setVotacion(Votacion votacion) {
+        this.votacion = votacion;
     }
 
     @Override

@@ -22,12 +22,11 @@ public class CrearVotante {
         return factory;
     }
 
-    public static Votante crearVotante(String tipo, List<Object> parametros, Colegio colegio){
+    public static Votante crearVotante(String tipo, List<Object> parametros){
         FactoryVotante factory = crearFactory(tipo);
         Votante newVotante = factory.crearVotante();
         newVotante.cargarParametros(parametros);
         newVotante.setEsDestacado();
-        colegio.addVotante(newVotante);
 
         //persistencia
         EntityManager em = BDutils.getEntityManager();
@@ -43,7 +42,6 @@ public class CrearVotante {
 
         // fin persitencia
 
-        if(newVotante.esDestacado()) colegio.addDestacado(newVotante);
         return newVotante;
     }
 

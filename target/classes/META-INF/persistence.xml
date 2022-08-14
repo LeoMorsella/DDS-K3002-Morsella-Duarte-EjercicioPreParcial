@@ -9,7 +9,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>Modelo.Colegio.Votacion</class>
-        <class>Servicios.Pelicula.APIPelicula.PeliculaResponse</class>
+        <class>Modelo.Pelicula.PeliculaResponse</class>
         <class>Modelo.Colegio.Votante</class>
         <class>Modelo.Colegio.Alumno</class>
         <class>Modelo.Colegio.Graduado</class>

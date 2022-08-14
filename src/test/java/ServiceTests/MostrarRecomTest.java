@@ -1,6 +1,5 @@
 package ServiceTests;
 
-import Modelo.Colegio.RepoVotaciones;
 import Servicios.Votacion.MostrarRecomendacion;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

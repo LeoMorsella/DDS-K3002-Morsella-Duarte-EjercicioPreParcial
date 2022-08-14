@@ -1,12 +1,10 @@
 package Servicios.Votacion;
 
-import Modelo.Colegio.Colegio;
 import Modelo.Colegio.Votacion;
 import Modelo.Colegio.Votante;
 import Servicios.BDutils;
 import org.hibernate.Session;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,6 +1,5 @@
 package ServiceTests;
 
-import Modelo.Colegio.Colegio;
 import Modelo.Colegio.Votante;
 import Modelo.Pelicula.PeliculaRequest;
 import Servicios.Votacion.CrearVotante;
@@ -16,8 +15,7 @@ public class RealizarVotacionTest {
     public void nuevaVotacionTest(){
         List<Object> parametrosAlumno = CargarCasos.cargarParametrosAlumno1();
         PeliculaRequest peliculaRequest = new PeliculaRequest("The Batman", "2022");
-        Colegio colegioPrueba = new Colegio();
-        Votante nuevoVotante = CrearVotante.crearVotante("alumno", parametrosAlumno, colegioPrueba);
+        Votante nuevoVotante = CrearVotante.crearVotante("alumno", parametrosAlumno);
         Assertions.assertDoesNotThrow(() -> RealizarVotacion.nuevaVotacion(peliculaRequest, nuevoVotante));
     }
 
@@ -25,8 +23,7 @@ public class RealizarVotacionTest {
     public void modificarVotacionDeVotadorQueNoVoto(){
         List<Object> parametrosGraduado = CargarCasos.cargarParametrosGraduado1();
         PeliculaRequest peliculaRequest = new PeliculaRequest("The Batman", "2022");
-        Colegio colegioPrueba = new Colegio();
-        Votante nuevoVotante = CrearVotante.crearVotante("graduado", parametrosGraduado, colegioPrueba);
+        Votante nuevoVotante = CrearVotante.crearVotante("graduado", parametrosGraduado);
         Assertions.assertThrows(Exception.class, () -> RealizarVotacion.modificarVotacion(peliculaRequest, nuevoVotante));
     }
 

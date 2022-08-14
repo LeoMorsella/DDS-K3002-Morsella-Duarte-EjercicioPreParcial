@@ -1,22 +1,12 @@
 package ServiceTests;
 
-import Modelo.Colegio.Colegio;
-import Modelo.Colegio.RepoVotaciones;
-import Modelo.Colegio.Votacion;
-import Modelo.Colegio.Votante;
-import Modelo.Pelicula.PeliculaRequest;
 import Servicios.CalculoDePuntaje.MostrarListaGanadoras;
 import Servicios.CalculoDePuntaje.PuntajeService;
-import Servicios.Pelicula.ValidarPelicula;
-import Servicios.Votacion.CrearVotante;
-import Servicios.Votacion.RealizarVotacion;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.test.AbstractPersistenceTest;
-
-import java.util.List;
 
 //No correr todos los tests juntos, ya que cada test funciona con el primer elemento de la lista del repo
 public class MostrarListadeGanadorasTest extends AbstractPersistenceTest implements WithGlobalEntityManager {

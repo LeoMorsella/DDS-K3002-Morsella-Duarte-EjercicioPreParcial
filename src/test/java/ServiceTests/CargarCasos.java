@@ -1,6 +1,5 @@
 package ServiceTests;
 
-import Modelo.Colegio.Colegio;
 import Modelo.Colegio.Votacion;
 import Modelo.Colegio.Votante;
 import Modelo.Pelicula.PeliculaRequest;
@@ -14,7 +13,6 @@ import java.util.List;
 public class CargarCasos {
 
     Votacion nuevaVotacion;
-    static Colegio colegioDePrueba = new Colegio();
     static public List<Object> cargarParametrosAlumno1(){
         List<Object> parametrosAlumn = new ArrayList<>();
         parametrosAlumn.add("juan");
@@ -40,10 +38,10 @@ public class CargarCasos {
         parametrosCurso.add(8.6);
         parametrosCurso.add(4.0);
         List<Object> parametrosAlumn = cargarParametrosAlumno1();
-        Votante alumno1 = CrearVotante.crearVotante("alumno", parametrosAlumn, colegioDePrueba);
+        Votante alumno1 = CrearVotante.crearVotante("alumno", parametrosAlumn);
         parametrosAlumn.clear();
         parametrosAlumn = cargarParametrosAlumno2();
-        Votante alumno2 = CrearVotante.crearVotante("alumno", parametrosAlumn, colegioDePrueba);
+        Votante alumno2 = CrearVotante.crearVotante("alumno", parametrosAlumn);
         alumnos.add(alumno1);
         alumnos.add(alumno2);
         parametrosCurso.add(alumnos);
@@ -69,7 +67,7 @@ public class CargarCasos {
     public void cargarCaso1() throws Exception {
         List<Object> parametrosAlumno = CargarCasos.cargarParametrosAlumno1();
         PeliculaRequest peliculaRequest = new PeliculaRequest("Underdogs", "2013");
-        Votante nuevoVotante = CrearVotante.crearVotante("alumno", parametrosAlumno, colegioDePrueba);
+        Votante nuevoVotante = CrearVotante.crearVotante("alumno", parametrosAlumno);
         RealizarVotacion.nuevaVotacion(peliculaRequest, nuevoVotante);
         nuevaVotacion = new Votacion(ValidarPelicula.validarPelicula(peliculaRequest), nuevoVotante);
     }
@@ -77,7 +75,7 @@ public class CargarCasos {
     public void cargarCaso2() throws Exception {
         List<Object> parametrosAlumno = CargarCasos.cargarParametrosAlumno2();
         PeliculaRequest peliculaRequest = new PeliculaRequest("A movie of eggs", "2006");
-        Votante nuevoVotante = CrearVotante.crearVotante("alumno", parametrosAlumno, colegioDePrueba);
+        Votante nuevoVotante = CrearVotante.crearVotante("alumno", parametrosAlumno);
         RealizarVotacion.nuevaVotacion(peliculaRequest, nuevoVotante);
         nuevaVotacion = new Votacion(ValidarPelicula.validarPelicula(peliculaRequest), nuevoVotante);
     }
@@ -85,7 +83,7 @@ public class CargarCasos {
     public void cargarCaso3() throws Exception {
         List<Object> parametrosCurso = CargarCasos.cargarParametrosCurso();
         PeliculaRequest peliculaRequest = new PeliculaRequest("Big Hero 6", "2014");
-        Votante nuevoVotante = CrearVotante.crearVotante("curso", parametrosCurso, colegioDePrueba);
+        Votante nuevoVotante = CrearVotante.crearVotante("curso", parametrosCurso);
         RealizarVotacion.nuevaVotacion(peliculaRequest, nuevoVotante);
         nuevaVotacion = new Votacion(ValidarPelicula.validarPelicula(peliculaRequest), nuevoVotante);
     }
@@ -93,7 +91,7 @@ public class CargarCasos {
     public void cargarCaso4() throws Exception {
         List<Object> parametrosGraduado = CargarCasos.cargarParametrosGraduado1();
         PeliculaRequest peliculaRequest = new PeliculaRequest("Spirited Away", "2001");
-        Votante nuevoVotante = CrearVotante.crearVotante("graduado", parametrosGraduado, colegioDePrueba);
+        Votante nuevoVotante = CrearVotante.crearVotante("graduado", parametrosGraduado);
         RealizarVotacion.nuevaVotacion(peliculaRequest, nuevoVotante);
         nuevaVotacion = new Votacion(ValidarPelicula.validarPelicula(peliculaRequest), nuevoVotante);
     }
@@ -101,7 +99,7 @@ public class CargarCasos {
     public void cargarCaso5() throws Exception {
         List<Object> parametrosGraduado = CargarCasos.cargarParametrosGraduado2();
         PeliculaRequest peliculaRequest = new PeliculaRequest("Home Alone", "1990");
-        Votante nuevoVotante = CrearVotante.crearVotante("graduado", parametrosGraduado, colegioDePrueba);
+        Votante nuevoVotante = CrearVotante.crearVotante("graduado", parametrosGraduado);
         RealizarVotacion.nuevaVotacion(peliculaRequest, nuevoVotante);
         nuevaVotacion = new Votacion(ValidarPelicula.validarPelicula(peliculaRequest), nuevoVotante);
     }

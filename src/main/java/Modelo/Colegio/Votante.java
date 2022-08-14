@@ -15,7 +15,7 @@ public abstract class Votante {
     int id_votante;
 
     @Transient
-    Votacion peliculaVotada;
+    Votacion votacion;
     Double promedio;
 
     boolean esDestacado;
@@ -29,12 +29,12 @@ public abstract class Votante {
         this.nombre = nombre;
     }
 
-    public Votacion getPeliculaVotada() {
-        return peliculaVotada;
+    public Votacion getVotacion() {
+        return votacion;
     }
 
-    public void setPeliculaVotada(Votacion peliculaVotada) {
-        this.peliculaVotada = peliculaVotada;
+    public void setVotacion(Votacion votacion) {
+        this.votacion = votacion;
     }
 
     public Double getPromedio() {

@@ -15,7 +15,7 @@ import javax.persistence.EntityManager;
 public class RealizarVotacion  {
 
     public static void nuevaVotacion(PeliculaRequest pelicula, Votante votante)throws Exception{
-        if(votante.getPeliculaVotada() != null) {
+        if(votante.getVotacion() != null) {
             System.out.println("Este votante ya eligió su pelicula");
             throw new Exception();
         }
@@ -23,10 +23,16 @@ public class RealizarVotacion  {
     }
 
     static public void modificarVotacion(PeliculaRequest pelicula, Votante votante) throws Exception{
-        if(votante.getPeliculaVotada() == null) {
+        if(votante.getVotacion() == null) {
             System.out.println("Este votante no eligió una pelicula aun");
             throw new Exception();
         }
+
+        EntityManager em = BDutils.getEntityManager();
+        Session sess = BDutils.getCurrentSessionFromConfig(em).openSession();
+        BDutils.comenzarTransaccion(em);
+        sess.delete(votante.getVotacion());
+        sess.delete(votante.getVotacion().getPelicula());
 
         generarVotacion(pelicula, votante);
     }
@@ -40,7 +46,7 @@ public class RealizarVotacion  {
             EntityManager em = BDutils.getEntityManager();
             Session sess = BDutils.getCurrentSessionFromConfig(em).openSession();
             BDutils.comenzarTransaccion(em);
-            votante.setPeliculaVotada(nuevaVotacion);
+            votante.setVotacion(nuevaVotacion);
             sess.update(votante);
 
             try {
