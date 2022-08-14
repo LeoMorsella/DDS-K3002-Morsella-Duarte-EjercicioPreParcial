@@ -56,7 +56,6 @@ public class MostrarListadeGanadorasTest extends AbstractPersistenceTest impleme
     //debería mostrar los primeros 4 casos
     @Test
     public void mostrarGanadorasTest() throws Exception {
-        RepoVotaciones repoV = RepoVotaciones.getRepo();
         (new CargarCasos()).cargarCaso1();
         (new CargarCasos()).cargarCaso2();
         (new CargarCasos()).cargarCaso3();

@@ -5,10 +5,9 @@ import Modelo.Colegio.Votacion;
 import Modelo.Colegio.Votante;
 import Modelo.Pelicula.PeliculaRequest;
 import Servicios.BDutils;
-import Servicios.Pelicula.APIPelicula.PeliculaResponse;
+import Modelo.Pelicula.PeliculaResponse;
 import Servicios.Pelicula.ValidarPelicula;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
 
 import javax.persistence.EntityManager;

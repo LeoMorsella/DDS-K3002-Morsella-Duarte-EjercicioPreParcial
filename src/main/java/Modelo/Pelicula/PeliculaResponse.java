@@ -1,4 +1,4 @@
-package Servicios.Pelicula.APIPelicula;
+package Modelo.Pelicula;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
